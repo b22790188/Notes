@@ -132,7 +132,7 @@ Worst-fit : allocate一個最大的hole，而過程也需要找完整個memory
 
 + Page number(p) : 哪一個page
 + Page offset(d) : page中的哪一個位置
-+ ![[Pasted image 20230515171029.png]]
++ ![[TLB.png]]
 
 ### Implementation of Page Table
 
