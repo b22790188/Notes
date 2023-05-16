@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebSecurity/Chapter2.md",
+                "file": "OS/Chapter9.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebSecurity/Chapter2.md",
+                "file": "OS/Chapter9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebSecurity/Chapter2.md",
+                "file": "OS/Chapter9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebSecurity/Chapter2.md"
+                "file": "OS/Chapter9.md"
               }
             }
           }
@@ -155,39 +155,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3e8f8f7f93e0de62",
+  "active": "cfab8e949d7fa786",
   "lastOpenFiles": [
+    "OS/Chapter7.md",
+    "OS/Chapter6.md",
+    "OS/Chapter5.md",
+    "OS/Chapter4.md",
+    "OS/Chapter3.md",
+    "OS/Chapter2.md",
+    "OS/Chapter1.md",
+    "image/Pasted image 20230307164642.png",
+    "image",
+    "WebSecurity/Chapter2.md",
     "SWE/Chapter7.md",
     "SWE/Chapter6.md",
     "SWE/Chapter5.md",
     "SWE/Chapter3.md",
     "SWE/Chapter2.md",
     "SWE/Chapter1.md",
-    "OS/Chapter1.md",
-    "OS/Chapter2.md",
-    "OS/Chapter3.md",
-    "OS/Chapter4.md",
-    "OS/Chapter5.md",
-    "OS/Chapter6.md",
-    "OS/Chapter7.md",
     "OS/Chapter8.md",
     "OS/Chapter9.md",
     "OS/Chapter10 - Virtual Memory.md",
     "README.md",
-    "Pasted image 20230515234354.png",
-    "Pasted image 20230515171029.png",
-    "Pasted image 20230514211121.png",
-    "Pasted image 20230514211102.png",
-    "Pasted image 20230514153648.png",
+    "image/Pasted image 20230515234354.png",
+    "image/Pasted image 20230515171029.png",
+    "image/Pasted image 20230514211121.png",
+    "image/Pasted image 20230514211102.png",
+    "image/Pasted image 20230514153648.png",
     "Untitled.md",
     "Untitled 1.md",
-    "Pasted image 20230513224725.png",
-    "type_of_process.png",
-    "WebSecurity/Chapter2.md",
+    "image/Pasted image 20230513224725.png",
+    "image/type_of_process.png",
     "os/Chapter2.md",
     "OS.md",
     "OS",
-    "Pasted image 20230307164642.png",
     "SWE/Chapter4.md",
     "swe.md",
     "Untitled 1.canvas",
