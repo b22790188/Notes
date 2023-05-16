@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OS/Chapter9.md",
+                "file": "WebSecurity/Chapter2.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OS/Chapter9.md",
+                "file": "WebSecurity/Chapter2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OS/Chapter9.md",
+                "file": "WebSecurity/Chapter2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OS/Chapter9.md"
+                "file": "WebSecurity/Chapter2.md"
               }
             }
           }
@@ -157,32 +157,33 @@
   },
   "active": "3e8f8f7f93e0de62",
   "lastOpenFiles": [
-    "OS/Chapter8.md",
-    "OS/Chapter10 - Virtual Memory.md",
-    "Pasted image 20230515234354.png",
-    "OS/Chapter2.md",
+    "SWE/Chapter7.md",
     "SWE/Chapter6.md",
-    "OS/Chapter9.md",
-    "Pasted image 20230515171029.png",
+    "SWE/Chapter5.md",
+    "SWE/Chapter3.md",
+    "SWE/Chapter2.md",
+    "SWE/Chapter1.md",
+    "OS/Chapter1.md",
+    "OS/Chapter2.md",
+    "OS/Chapter3.md",
+    "OS/Chapter4.md",
+    "OS/Chapter5.md",
+    "OS/Chapter6.md",
     "OS/Chapter7.md",
+    "OS/Chapter8.md",
+    "OS/Chapter9.md",
+    "OS/Chapter10 - Virtual Memory.md",
+    "README.md",
+    "Pasted image 20230515234354.png",
+    "Pasted image 20230515171029.png",
     "Pasted image 20230514211121.png",
     "Pasted image 20230514211102.png",
     "Pasted image 20230514153648.png",
-    "OS/Chapter6.md",
     "Untitled.md",
-    "OS/Chapter5.md",
     "Untitled 1.md",
     "Pasted image 20230513224725.png",
-    "SWE/Chapter2.md",
-    "SWE/Chapter7.md",
-    "SWE/Chapter5.md",
-    "SWE/Chapter3.md",
-    "SWE/Chapter1.md",
     "type_of_process.png",
-    "OS/Chapter1.md",
-    "OS/Chapter3.md",
     "WebSecurity/Chapter2.md",
-    "OS/Chapter4.md",
     "os/Chapter2.md",
     "OS.md",
     "OS",
