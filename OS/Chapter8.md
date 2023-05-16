@@ -24,7 +24,7 @@ deadlock必須滿足以下四個條件才能夠成立，而滿足以下四個條
 + Circular wait
 
 ## Resource-Allocation Graph
-![[Pasted image 20230514153648.png]]
+![Resource_allocation_graph.png](../image/Resource_allocation_graph.png)
 
 + If graph contains no cycles -> no deadlock
 + If graph contains a cycle 
@@ -107,11 +107,11 @@ deadlock必須滿足以下四個條件才能夠成立，而滿足以下四個條
 	+ Need
 
 #### Safety Algorithm
-![[Pasted image 20230514211102.png]]
+![Safety_algorithm.png](../image/Safety_algorithm.png)
 
 #### Resource-Request Algorithm for Task Ti
 
-![[Pasted image 20230514211121.png]]
+![Resource_request_algorithm.png](../image/Resource_request_algorithm.png)
 
 ### Deadlock Detection
 

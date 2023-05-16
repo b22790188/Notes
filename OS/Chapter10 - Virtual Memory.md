@@ -98,7 +98,7 @@ Separation of user logical memory from physical memory
 允許parent跟child可以share same page in memory
 
 + 當child要修改page C時，OS會去要一個free frame而且copy一份page C的內容讓child修改
-![[Pasted image 20230515234354.png]]
+![[Copy_on_write_example.png]]
 
 + vfork
 
