@@ -244,6 +244,55 @@ p35
 	+ 若分配完後還有額外的frame -> 可以再開新process
 	+ 若是working set size增加且超過total number of avaliable frame，則選擇process停掉，來釋放frame，讓其他process使用
 
+#### Page fault frequency
 
+比起working-set model 來說更加直覺
++ 藉由觀察process的page fault rate
+	+ page fault rate too high -> increase number of pages
+	+ page fault rate too low -> decrease number of pages
 
+![My image](../image/PFF.png)
+
+### Memory Compression
+
+除了利用swap來解決page的問題之外，memory compression也是另外一種方式。
+
+![My image](../image/frame_list_before_compression.png)
+
+![My image](../image/frame_list_after_compression.png)
+
++ 將modified frame中的15、3、35壓縮成一個frame
++ 將這個frame存在`compressed frame list`中，並讓15、3、35回到free frame list
++ 當這15、3、35之後再被referenced到的時候，再將frame 7解壓縮
+
+### Allocating Kernel Memory
+
+跟user mode不同，記憶體通常從`free-memory pool`而來
+主要有兩個原因:
+
+1. 因為kernel可能會去要求分配不同資料結構大小的記憶體，而這些記憶體有的比一個page還小，所以kernel必須要小心地使用記憶體，盡量避免fragmentation造成的浪費。
+2. user-mode process通常不需要被分配連續的實體記憶體空間，但有些特定的硬體會直接跟physical address互動，所以可能需要保留一些實體的連續記憶體空間供使用。
+
+通常有兩種方式:
+
+1. Buddy system
+	+ 從一段固定大小的實體記憶體中(segment)，利用`powef-of-2 allocator`來分配記憶體，如果要求的記憶體數量不剛好，則提升到下一個2的次方數。
+	+ example
+		+ 假設有一段實體記憶體大小256KB，而kernel要求了21KB，所以最小的記憶體單位會是32KB，而一開始這個256KB的記憶體會被分成兩個buddies(each with 128KB)，其中一個buddy再被往下分，直到32KB出現。如下圖，最終CL,或CR其中一個則會被分配給kernel的需求。
+		![Myimage][../image/buddy.png]
+	+ pros
+		+ coalescing : 可以快速的將較少使用到的chunk和成一個更大的記憶體空間
+	+ cons
+		+ fragmentation
+2. Slab
+	+ slab是由一個或多個連續的記憶體空間組成，而cache是由一個或多個slab組成。
+	+ Each cache filled with `objects` – instantiations of the data structure
+	+  cache建立時，object被marked `free`
+	+ 當sturcutre被儲存時，object被視為used
+	+ 如果當前的slab已經都被使用了(marked used)，則下一次的分配再去尋找empty slab
+	+ If no empty slabs , new slabs created
+	+ pros
+		+ no fragmentation
+		+ fast memory request satisfaction
+			+ 因為allocate 、 deallocate這些動作都相當耗時，slab中有先分配好可以讓記憶體存取的速度更快速。
 
