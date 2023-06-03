@@ -128,4 +128,122 @@ Prevent over-allocationof memory by modifying page-fault service routine to incl
 + Evaluate
 	+ 給定一個string ，計算page fault
 	+ 字串只包含pagenumber
-		
+
+##### First-In-First-Out Algorithm
+
++ Belady's anomaly
+	+ For some page-replacement algorithm , the page-fault rate may increase as `the number of allocated frames increases`
+
+##### Optimal
+
++ Replace page that will not be used for longest period of time
++ Used to measure how well your algorithm performaed 
+
+##### LRU
+
++ Replace page that has not been used in the most amount of time
++ Implementation
+	+ Two approach
+		+ Counter
+			+ Every page with a counter , when referenced , copy the clock into the counter
+			+ When a page need to be changed, look at the counters to find smallest value
+		+ Stack
+			+ 用stack來看page的最近使用時間，在stack中越上方的page代表最近較常被使用
+			+ 當page被reference時，將該page從stack中移除，再放到stack的最上方
+			+ No need to search
+			+ six pointer , cost heavily
+
++ LRU and OPT are cases ofstack algorithms thatdon’t have Belady’s Anomaly
+
+##### LRU Approximation Algorithms
+PPT 31
+
+##### Enhanced Second-Chance Algorithm
+
++ 同時使用referenece bit 及 modify bit
+	+ (0, 0) neither recently used not modified – best page to replace
+	+  (0, 1) not recently used but modified – not quite as good, must write out before replacement
+	+ (1, 0) recently used but clean – probably will be used again soon
+	+ (1, 1) recently used and modified – probably will be used again soon and need to write out before replacement
+
+##### Counting Algorithms
++ Lease Frequently Used(LFU)
++ Most Frequently Used(MFU)
+
+##### Page-Buffering Algorithms
+
+將desired page先分配給一個free frame(藉由free frame list)，直接載入記憶體中，不用等待victim frame寫回storage，當victim frame成功寫回storage後，再將該frame加到free frame list
+
+##### Applications and Page Replacement
+p35
+
+#### Allocation of Frames
+
++ 每一個process需要最少數量的frame
++ 最大frame數量就是total frame數量
++ Two approach
+	+ Fixed Allocation
+		+ Equal Allocation
+		+ Propotional allocation
+	+ Priority Allocation
+		+ 依照program所需的大小來分配剩餘free frame
+
+
+##### Global vs Local Allocation
+
++ Global replacement
+	+ process可以從所有的frame裡面挑一個要替換的frame，即使該frame已經被其他process使用
+	+ 可能會造成process執行時間相差非常大
+	+ 同常能帶來更好的throughput，所以較被廣泛採用
++ Local replacement
+	+ process只能從自己被分配到的frame中選擇替換
+	+ process間的表現更一致
+	+ 但可能造成記憶體效力低落
+
+##### Reclaiming Pages
+
+替free memory設定臨界值，當free memory小於最小臨界值時，就從frame中釋放一些資源，使得隨時有足夠的free frame可供使用。
+
+##### Non-Uniform Memory Access
+
++ The speed of access to memory by CPU varies
++ 藉由分配給離CPU較近的memory，讓CPU能夠更快存取到記憶體
++ Linux CFS scheduler
++ Solaries lgroups(Locality groups)
+	+ 原文書419
+	+ 
+### Thrashing
+
++ Definition : a process is busy swapping pages in and out
++ 一個process如果沒有足夠的page，則很容易page fault
+	1. page fault
+	2. 替換frame
+	3. 因為常被使用所以需要把frame再換回來
+
+	+ 低CPU使用率
+	+ 造成OS認為需要提高mutiprogramming的程度
+		+ 又有process被加入系統 -> thrashing
+
++ 解決辦法
+	+ 利用locality model來觀察程式所需要的frame，盡量避免page fault
+
+#### Working-Set Model
+
+用來觀測程式的locality
+
++ Δ， Working-set window
+	+ too small, cannot emcompass all locality
+	+ too large, may overlap many locality
++ working set
++ D working set size
++ m total number of avaliable frame
++ D > m
+	+ cause thrashing, because some process will not have enough frames to use
++ How OS use
+	+ 依照working set model 分配給process所需的frame
+	+ 若分配完後還有額外的frame -> 可以再開新process
+	+ 若是working set size增加且超過total number of avaliable frame，則選擇process停掉，來釋放frame，讓其他process使用
+
+
+
+
