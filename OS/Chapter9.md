@@ -132,7 +132,7 @@ Worst-fit : allocate一個最大的hole，而過程也需要找完整個memory
 
 + Page number(p) : 哪一個page
 + Page offset(d) : page中的哪一個位置
-![My image](../image/TLB.png)
+![My image](Address_translation_table.png)
 
 ### Implementation of Page Table
 
@@ -156,6 +156,8 @@ Worst-fit : allocate一個最大的hole，而過程也需要找完整個memory
 + TLB Hardware
 	+ 如果在TLB中找到，就拿對應的frame
 	+ 如果找不到，就從page table memory抓
+
+![Myimage][../image/TLB.png]
 
 ### Effective Access Time
 
